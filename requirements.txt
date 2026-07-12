@@ -4,10 +4,10 @@ python-dotenv
 google-generativeai
 groq
 reportlab
+PyMuPDF
 pillow
 numpy
 pandas
 scikit-learn
-gunicorn
 opencv-python-headless
 easyocr
