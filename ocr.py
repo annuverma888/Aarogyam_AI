@@ -1,13 +1,13 @@
 import easyocr
 
 # Create OCR reader (English)
-reader = easyocr.Reader(['en'])
+
 
 def extract_text(image_path):
     """
     Extract text from medicine image
     """
-
+    reader = easyocr.Reader(['en'])
     result = reader.readtext(image_path)
 
     text = ""

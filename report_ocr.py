@@ -3,13 +3,13 @@ import fitz  # PyMuPDF
 from PIL import Image
 
 # Load OCR model only once
-reader = easyocr.Reader(['en'])
+
 
 
 def extract_text(file_path):
 
     text = ""
-
+    reader = easyocr.Reader(['en'])
     # ---------- PDF ----------
     if file_path.lower().endswith(".pdf"):
 

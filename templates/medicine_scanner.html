@@ -29,11 +29,25 @@
                 <p>Supported: JPG, JPEG, PNG</p>
 
                 <input
-                    type="file"
-                    name="medicine_image"
-                    class="form-control"
-                    accept=".jpg,.jpeg,.png"
-                    required>
+    type="file"
+    name="medicine_image"
+    id="medicine_image"
+    class="form-control"
+    accept="image/*"
+    onchange="previewMedicine(event)"
+    required>
+
+    <div class="text-center mt-4">
+
+    <img id="previewImage"
+         src=""
+         style="display:none;
+                max-width:300px;
+                max-height:300px;
+                border-radius:15px;
+                box-shadow:0 5px 20px rgba(0,0,0,.3);">
+
+</div>
 
             </div>
 
@@ -66,5 +80,19 @@
     </div>
 
 </div>
+
+<script>
+
+function previewMedicine(event){
+
+    const image = document.getElementById("previewImage");
+
+    image.src = URL.createObjectURL(event.target.files[0]);
+
+    image.style.display = "block";
+
+}
+
+</script>
 
 {% endblock %}
