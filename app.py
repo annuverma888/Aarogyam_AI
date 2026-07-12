@@ -46,8 +46,7 @@ if "Unnamed: 133" in train.columns:
 
 symptoms = train.drop("prognosis", axis=1).columns.tolist()
 
-text = report_extract_text(filepath)
-ocr_text = medicine_extract_text(filepath)
+
 
 @app.route("/")
 def home():
@@ -129,7 +128,7 @@ def report_analyzer():
         report.save(filepath)
 
         # OCR
-        extracted_text = extract_text(filepath)
+        extracted_text = report_extract_text(filepath)
 
         # AI Analysis
         ai_result = analyze_report(extracted_text)
@@ -231,7 +230,7 @@ def medicine_scanner():
 
         image.save(filepath)
 
-        ocr_text = extract_text(filepath)
+        ocr_text = medicine_extract_text(filepath)
 
         report = analyze_medicine(ocr_text)
 
