@@ -3,7 +3,7 @@ gunicorn
 python-dotenv
 google-generativeai
 groq
-
+reportlab
 pillow
 numpy
 pandas
