@@ -1,0 +1,42 @@
+Disease,Medicine_1,Medicine_2,Medicine_3
+Fungal infection,Clotrimazole,Terbinafine,Fluconazole
+Allergy,Cetirizine,Loratadine,Fexofenadine
+GERD,Omeprazole,Pantoprazole,Esomeprazole
+Chronic cholestasis,Ursodeoxycholic Acid,Cholestyramine,Silymarin
+Drug Reaction,Cetirizine,Prednisolone,Hydrocortisone
+Peptic ulcer disease,Omeprazole,Pantoprazole,Sucralfate
+AIDS,Tenofovir,Lamivudine,Dolutegravir
+Diabetes,Metformin,Glimepiride,Insulin
+Gastroenteritis,ORS,Ondansetron,Loperamide
+Bronchial Asthma,Salbutamol,Budesonide,Montelukast
+Hypertension,Amlodipine,Losartan,Telmisartan
+Migraine,Sumatriptan,Paracetamol,Naproxen
+Cervical spondylosis,Ibuprofen,Naproxen,Diclofenac
+Paralysis (brain hemorrhage),Aspirin,Atorvastatin,Clopidogrel
+Jaundice,Silymarin,Ursodeoxycholic Acid,Vitamin B Complex
+Malaria,Artemether-Lumefantrine,Chloroquine,Primaquine
+Chicken pox,Acyclovir,Paracetamol,Calamine Lotion
+Dengue,Paracetamol,ORS,Electrolyte Solution
+Typhoid,Azithromycin,Cefixime,Ciprofloxacin
+Hepatitis A,ORS,Vitamin Supplements,Silymarin
+Hepatitis B,Tenofovir,Entecavir,Lamivudine
+Hepatitis C,Sofosbuvir,Daclatasvir,Velpatasvir
+Hepatitis D,Pegylated Interferon,Tenofovir,Entecavir
+Hepatitis E,ORS,Silymarin,Vitamin Supplements
+Alcoholic hepatitis,Prednisolone,Silymarin,Vitamin B Complex
+Tuberculosis,Isoniazid,Rifampicin,Pyrazinamide
+Common Cold,Paracetamol,Cetirizine,Dextromethorphan
+Pneumonia,Azithromycin,Amoxicillin,Ceftriaxone
+Dimorphic hemorrhoids (piles),Hydrocortisone Cream,Lidocaine Ointment,Diosmin
+Heart attack,Aspirin,Atorvastatin,Clopidogrel
+Varicose veins,Diosmin,Hesperidin,Compression Stockings
+Hypothyroidism,Levothyroxine,Liothyronine,Euthyrox
+Hyperthyroidism,Methimazole,Propylthiouracil,Carbimazole
+Hypoglycemia,Glucose Tablets,Dextrose,Glucagon
+Osteoarthritis,Paracetamol,Ibuprofen,Diclofenac
+Arthritis,Naproxen,Ibuprofen,Diclofenac
+Vertigo (Paroxysmal Positional Vertigo),Betahistine,Prochlorperazine,Cinnarizine
+Acne,Benzoyl Peroxide,Adapalene,Doxycycline
+Urinary tract infection,Nitrofurantoin,Trimethoprim,Ciprofloxacin
+Psoriasis,Clobetasol,Calcipotriol,Methotrexate
+Impetigo,Mupirocin,Fusidic Acid,Cephalexin

@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+
+{% block title %}AI Medicine Scanner{% endblock %}
+
+{% block content %}
+
+<div class="container py-5">
+
+    <div class="scanner-card">
+
+        <h1 class="scanner-title">
+            💊 AI Medicine Scanner
+        </h1>
+
+        <p class="scanner-subtitle">
+            Upload a medicine strip or medicine box image and let AI identify it.
+        </p>
+
+        <form action="/medicine_scanner" method="POST" enctype="multipart/form-data">
+
+            <div class="upload-area">
+
+                <div class="upload-icon">
+                    📷
+                </div>
+
+                <h4>Select Medicine Image</h4>
+
+                <p>Supported: JPG, JPEG, PNG</p>
+
+                <input
+                    type="file"
+                    name="medicine_image"
+                    class="form-control"
+                    accept=".jpg,.jpeg,.png"
+                    required>
+
+            </div>
+
+            <br>
+
+            <button class="btn btn-primary btn-lg w-100">
+
+                🔍 Scan Medicine
+
+            </button>
+
+        </form>
+
+        {% if result %}
+
+        <div class="result-card mt-4">
+
+            <h3>
+                🤖 AI Analysis
+            </h3>
+
+            <hr>
+
+            <pre>{{ result }}</pre>
+
+        </div>
+
+        {% endif %}
+
+    </div>
+
+</div>
+
+{% endblock %}

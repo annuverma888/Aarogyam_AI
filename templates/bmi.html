@@ -1,0 +1,170 @@
+{% extends "base.html" %}
+
+{% block title %}BMI Calculator{% endblock %}
+
+{% block content %}
+
+<div class="container py-5">
+
+    <div class="row justify-content-center">
+
+        <div class="col-lg-6 col-md-8">
+
+            <div class="bmi-card">
+
+                <h2 class="bmi-title">
+                    ⚖️ BMI Calculator
+                </h2>
+
+                <form action="/bmi" method="POST" id="bmiForm">
+
+                    <div class="mb-3">
+
+                        <label class="form-label">
+                            Height (cm)
+                        </label>
+
+                        <input
+                            type="number"
+                            class="form-control"
+                            name="height"
+                            placeholder="Enter Height"
+                            required>
+
+                    </div>
+
+                    <div class="mb-3">
+
+                        <label class="form-label">
+                            Weight (kg)
+                        </label>
+
+                        <input
+                            type="number"
+                            class="form-control"
+                            name="weight"
+                            placeholder="Enter Weight"
+                            required>
+
+                    </div>
+
+                    <div class="mb-3">
+
+                        <label class="form-label">
+                            Age
+                        </label>
+
+                        <input
+                            type="number"
+                            class="form-control"
+                            name="age"
+                            placeholder="Enter Age"
+                            required>
+
+                    </div>
+
+                    <div class="mb-4">
+
+                        <label class="form-label">
+                            Gender
+                        </label>
+
+                        <select
+                            class="form-select"
+                            name="gender"
+                            required>
+
+                            <option value="" selected disabled>
+                                Select Gender
+                            </option>
+
+                            <option value="Male">
+                                Male
+                            </option>
+
+                            <option value="Female">
+                                Female
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                    <button
+                        type="submit"
+                        class="btn bmi-btn">
+
+                        Predict BMI
+
+                    </button>
+
+                </form>
+
+                {% if category %}
+
+                <div class="result-card">
+
+                    <h3>
+                        BMI Prediction
+                    </h3>
+
+                    <h2>
+                        {{ category }}
+                    </h2>
+
+                    <hr>
+
+                    <p>
+
+                        <strong>Height :</strong>
+                        {{ height }} cm
+
+                    </p>
+
+                    <p>
+
+                        <strong>Weight :</strong>
+                        {{ weight }} kg
+
+                    </p>
+
+                    <p>
+
+                        <strong>Age :</strong>
+                        {{ age }}
+
+                    </p>
+
+                    <p>
+
+                        Stay healthy with a balanced diet and regular exercise.
+
+                    </p>
+
+                </div>
+
+                {% endif %}
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+
+document.addEventListener("DOMContentLoaded",function(){
+
+    {% if category %}
+
+    document.getElementById("bmiForm").reset();
+
+    {% endif %}
+
+});
+
+</script>
+
+{% endblock %}

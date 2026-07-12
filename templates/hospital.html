@@ -1,0 +1,130 @@
+{% extends "base.html" %}
+
+{% block title %}Nearby Medical Services{% endblock %}
+
+{% block content %}
+
+<div class="container py-5">
+
+    <div class="text-center mb-5">
+        <h1 class="text-white">🏥 Nearby Medical Services</h1>
+        <p class="text-white">
+            Find nearby hospitals and pharmacies using your current location.
+        </p>
+    </div>
+
+    <div class="row justify-content-center">
+
+        <!-- Hospital Card -->
+        <div class="col-lg-5 col-md-6 mb-4">
+
+            <div class="feature-card text-center">
+
+                <div class="card-icon">
+                    🏥
+                </div>
+
+                <h3>Nearby Hospital</h3>
+
+                <p>
+                    Find hospitals near your current location.
+                </p>
+
+                <button
+                    class="btn btn-primary"
+                    onclick="findHospital()">
+
+                    📍 Find Hospital
+
+                </button>
+
+            </div>
+
+        </div>
+
+        <!-- Pharmacy Card -->
+        <div class="col-lg-5 col-md-6 mb-4">
+
+            <div class="feature-card text-center">
+
+                <div class="card-icon">
+                    💊
+                </div>
+
+                <h3>Nearby Pharmacy</h3>
+
+                <p>
+                    Find pharmacies near your current location.
+                </p>
+
+                <button
+                    class="btn btn-success"
+                    onclick="findPharmacy()">
+
+                    📍 Find Pharmacy
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+
+function findHospital(){
+
+    if(navigator.geolocation){
+
+        navigator.geolocation.getCurrentPosition(function(position){
+
+            const lat = position.coords.latitude;
+            const lng = position.coords.longitude;
+
+            window.open(
+                `https://www.google.com/maps/search/hospital/@${lat},${lng},15z`,
+                "_blank"
+            );
+
+        });
+
+    }
+    else{
+
+        alert("Geolocation is not supported.");
+
+    }
+
+}
+
+function findPharmacy(){
+
+    if(navigator.geolocation){
+
+        navigator.geolocation.getCurrentPosition(function(position){
+
+            const lat = position.coords.latitude;
+            const lng = position.coords.longitude;
+
+            window.open(
+                `https://www.google.com/maps/search/pharmacy/@${lat},${lng},15z`,
+                "_blank"
+            );
+
+        });
+
+    }
+    else{
+
+        alert("Geolocation is not supported.");
+
+    }
+
+}
+
+</script>
+
+{% endblock %}

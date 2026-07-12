@@ -1,0 +1,12 @@
+Flask
+gunicorn
+python-dotenv
+google-generativeai
+groq
+opencv-python
+pillow
+numpy
+pandas
+scikit-learn
+tensorflow
+easyocr

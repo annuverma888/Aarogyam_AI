@@ -1,0 +1,109 @@
+{% extends "base.html" %}
+
+{% block title %}
+Emergency
+{% endblock %}
+
+{% block content %}
+
+<div class="container">
+
+    <div class="main-card">
+
+        <h1 class="page-title">
+            🚨 Medical Emergency
+        </h1>
+
+        <p class="page-subtitle">
+            Immediate help and emergency contacts.
+        </p>
+
+        <div class="row">
+
+            <div class="col-md-4">
+
+                <div class="feature-card">
+
+                    <h3>🚑 Ambulance</h3>
+
+                    <h2>108</h2>
+
+                    <a href="tel:108" class="btn btn-danger">
+                        Call Now
+                    </a>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-4">
+
+                <div class="feature-card">
+
+                    <h3>👮 Police</h3>
+
+                    <h2>100</h2>
+
+                    <a href="tel:100" class="btn btn-primary">
+                        Call Now
+                    </a>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-4">
+
+                <div class="feature-card">
+
+                    <h3>🔥 Fire</h3>
+
+                    <h2>101</h2>
+
+                    <a href="tel:101" class="btn btn-warning">
+                        Call Now
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <br>
+
+        <div class="result-card">
+
+            <h2>🩺 Basic First Aid</h2>
+
+            <ul>
+
+                <li>✔ Keep the patient calm.</li>
+
+                <li>✔ Call emergency services immediately.</li>
+
+                <li>✔ Stop severe bleeding using clean cloth.</li>
+
+                <li>✔ Perform CPR if trained.</li>
+
+                <li>✔ Do not give food to an unconscious person.</li>
+
+                <li>✔ Stay with the patient until help arrives.</li>
+
+            </ul>
+
+        </div>
+
+        <div class="text-center mt-4">
+
+            <a href="/hospital" class="btn btn-success btn-lg">
+                🏥 Find Nearby Hospital
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

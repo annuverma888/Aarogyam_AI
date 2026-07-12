@@ -1,0 +1,108 @@
+{% extends "base.html" %}
+
+{% block title %}Disease Recommendation System{% endblock %}
+
+{% block content %}
+
+<div class="container">
+
+    <!-- Hero Section -->
+    <section class="hero-section py-5">
+        <div class="row align-items-center">
+
+            <div class="col-lg-6">
+                <h1 class="display-4 fw-bold text-white">
+                    AI Disease Recommendation System
+                </h1>
+
+                <p class="lead text-light">
+                    Predict diseases using Machine Learning based on symptoms.
+                </p>
+            </div>
+
+            <div class="col-lg-6 text-center">
+                <img src="https://cdn-icons-png.flaticon.com/512/2966/2966488.png"
+                     class="img-fluid"
+                     style="max-height:420px;">
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Prediction Card -->
+    <div class="row justify-content-center">
+
+        <div class="col-lg-10">
+
+            <div class="main-card">
+
+                <h2 class="text-center text-white mb-4">
+                    Select Symptoms
+                </h2>
+
+                <form action="/predict" method="POST">
+
+                    <div class="mb-4">
+
+                        <label class="form-label text-white">
+                            Search & Select Symptoms
+                        </label>
+
+                        <select
+                            class="form-select symptom-select"
+                            name="symptoms"
+                            multiple>
+
+                            {% for symptom in symptoms %}
+
+                            <option value="{{ symptom }}">
+                                {{ symptom.replace("_"," ").title() }}
+                            </option>
+
+                            {% endfor %}
+
+                        </select>
+
+                    </div>
+
+                    <button class="btn btn-primary btn-lg w-100">
+
+                        Predict Disease
+
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+<!-- Select2 -->
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet">
+
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+<script>
+$(document).ready(function(){
+
+    $('.symptom-select').select2({
+
+        placeholder: "Search Symptoms",
+
+        width: "100%"
+
+    });
+
+});
+</script>
+
+<script src="{{ url_for('static', filename='js/style.js') }}"></script>
+
+{% endblock %}

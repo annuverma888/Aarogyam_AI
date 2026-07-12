@@ -1,0 +1,101 @@
+{% extends "base.html" %}
+
+{% block title %}AI Medical Report Analyzer{% endblock %}
+
+{% block content %}
+
+<div class="container py-5">
+
+    <div class="row justify-content-center">
+
+        <div class="col-lg-8">
+
+            <div class="card shadow-lg border-0 rounded-4">
+
+                <div class="card-body p-5">
+
+                    <div class="text-center mb-4">
+
+                        <h1 class="fw-bold text-primary">
+                            📄 AI Medical Report Analyzer
+                        </h1>
+
+                        <p class="text-muted">
+                            Upload your Blood Report, CBC Report, Sugar Report or any Medical Report.
+                        </p>
+
+                    </div>
+
+                    <form action="/report_analyzer"
+                          method="POST"
+                          enctype="multipart/form-data">
+
+                        <div class="mb-4">
+
+                            <label class="form-label fw-bold">
+
+                                Upload Report
+
+                            </label>
+
+                            <input
+                                type="file"
+                                name="report"
+                                class="form-control form-control-lg"
+                                accept=".jpg,.jpeg,.png,.pdf"
+                                required>
+
+                        </div>
+
+                        <button
+                            class="btn btn-primary btn-lg w-100">
+
+                            🤖 Analyze Report
+
+                        </button>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    {% if result %}
+
+    <div class="row justify-content-center mt-5">
+
+        <div class="col-lg-10">
+
+            <div class="card shadow-lg border-0 rounded-4">
+
+                <div class="card-body">
+
+                    <h2 class="text-success text-center mb-4">
+
+                        📊 AI Analysis Result
+
+                    </h2>
+
+                    <div class="alert alert-light border">
+
+                        <pre style="white-space:pre-wrap;font-size:16px;">{{ result }}</pre>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    {% endif %}
+
+</div>
+
+{% endblock %}

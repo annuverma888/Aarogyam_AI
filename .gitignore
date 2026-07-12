@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.pyc
+
+# Virtual Environment
+disease/
+venv/
+env/
+
+# Environment
+.env
+
+# Notebook
+.ipynb_checkpoints/
+
+# VS Code
+.vscode/
+
+# Uploads
+uploads/
+
+# Reports
+reports/
+
+# OS
+.DS_Store
+Thumbs.db

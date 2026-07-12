@@ -1,0 +1,384 @@
+{% extends "base.html" %}
+
+{% block title %}AarogyamAI{% endblock %}
+
+{% block content %}
+
+<div class="container py-5">
+
+    <!-- Hero Section -->
+    <div class="text-center mb-5">
+
+        <h1 class="display-4 fw-bold text-primary">
+            AI Disease Recommendation System
+        </h1>
+
+        <p class="lead text-muted">
+            Your Smart Healthcare Assistant Powered by Artificial Intelligence
+        </p>
+
+    </div>
+
+    <!-- Feature Cards -->
+
+    <div class="row g-4">
+
+        <!-- Disease Prediction -->
+        <div class="col-md-4">
+
+            <div class="card feature-card shadow h-100">
+
+                <div class="card-body text-center">
+
+                    <div class="display-3">🩺</div>
+
+                    <h4>Disease Prediction</h4>
+
+                    <p>
+                        Predict diseases using AI based on selected symptoms.
+                    </p>
+
+                    <a href="/disease" class="btn btn-primary">
+                        Open
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+       <!-- Medicine -->
+
+<div class="col-md-4">
+
+    <div class="card feature-card shadow h-100">
+
+        <div class="card-body text-center">
+
+            <div class="display-3">💊</div>
+
+            <h4>Medicine Center</h4>
+
+            <p>
+                Search medicines, scan medicine images, check interactions and more.
+            </p>
+
+            <a href="/medicine" class="btn btn-success">
+                Open
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+        <!-- Dashboard -->
+
+        <div class="col-md-4">
+
+            <div class="card feature-card shadow h-100">
+
+                <div class="card-body text-center">
+
+                    <div class="display-3">📊</div>
+
+                    <h4>Dashboard</h4>
+
+                    <p>
+                        View healthcare statistics and reports.
+                    </p>
+
+                    <a href="/dashboard" class="btn btn-info">
+                        Open
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- BMI -->
+
+        <div class="col-md-4">
+
+            <div class="card feature-card shadow h-100">
+
+                <div class="card-body text-center">
+
+                    <div class="display-3">⚖️</div>
+
+                    <h4>BMI Calculator</h4>
+
+                    <p>
+                        Calculate your Body Mass Index instantly.
+                    </p>
+
+                    <a href="/bmi" class="btn btn-warning">
+                        Open
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Calorie -->
+
+        <div class="col-md-4">
+
+            <div class="card feature-card shadow h-100">
+
+                <div class="card-body text-center">
+
+                    <div class="display-3">🔥</div>
+
+                    <h4>Calorie Calculator</h4>
+
+                    <p>
+                        Find your daily calorie requirement.
+                    </p>
+
+                    <a href="/calorie" class="btn btn-danger">
+                        Open
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Water -->
+
+        <div class="col-md-4">
+
+            <div class="card feature-card shadow h-100">
+
+                <div class="card-body text-center">
+
+                    <div class="display-3">💧</div>
+
+                    <h4>Water Intake</h4>
+
+                    <p>
+                        Calculate your daily water intake.
+                    </p>
+
+                    <a href="/water" class="btn btn-primary">
+                        Open
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Hospital -->
+
+        <div class="col-md-4">
+
+            <div class="card feature-card shadow h-100">
+
+                <div class="card-body text-center">
+
+                    <div class="display-3">🏥</div>
+
+                    <h4>Nearby Hospitals and Pharmac</h4>
+
+                    <p>
+                        Find hospitals near your location.
+                    </p>
+
+                    <a href="/hospital" class="btn btn-secondary">
+                        Open
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Emergency -->
+
+        <div class="col-md-4">
+
+            <div class="card feature-card shadow h-100">
+
+                <div class="card-body text-center">
+
+                    <div class="display-3">🚑</div>
+
+                    <h4>Emergency</h4>
+
+                    <p>
+                        Quick access to emergency contacts.
+                    </p>
+
+                    <a href="/emergency" class="btn btn-danger">
+                        Open
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- First Aid -->
+
+        <div class="col-md-4">
+
+            <div class="card feature-card shadow h-100">
+
+                <div class="card-body text-center">
+
+                    <div class="display-3">🩹</div>
+
+                    <h4>First Aid</h4>
+
+                    <p>
+                        Learn basic first aid procedures.
+                    </p>
+
+                    <a href="/firstaid" class="btn btn-success">
+                        Open
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Health Tips -->
+
+        <div class="col-md-4">
+
+            <div class="card feature-card shadow h-100">
+
+                <div class="card-body text-center">
+
+                    <div class="display-3">💡</div>
+
+                    <h4>Health Tips</h4>
+
+                    <p>
+                        Daily health tips for a better lifestyle.
+                    </p>
+
+                    <a href="/tips" class="btn btn-info">
+                        Open
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- PDF Reports -->
+
+        <div class="col-md-4">
+
+            <div class="card feature-card shadow h-100">
+
+                <div class="card-body text-center">
+
+                    <div class="display-3">📄</div>
+
+                    <h4>Health Reports</h4>
+
+                    <p>
+                        Download and manage generated reports.
+                    </p>
+
+                    <a href="/reports" class="btn btn-dark">
+                        Open
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- About -->
+
+        <div class="col-md-4">
+
+            <div class="card feature-card shadow h-100">
+
+                <div class="card-body text-center">
+
+                    <div class="display-3">ℹ️</div>
+
+                    <h4>About Project</h4>
+
+                    <p>
+                        Learn about our AI-powered healthcare system.
+                    </p>
+
+                    <a href="/about" class="btn btn-primary">
+                        Open
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<style>
+
+.feature-card{
+
+    border-radius:20px;
+
+    transition:.4s;
+
+    cursor:pointer;
+
+}
+
+.feature-card:hover{
+
+    transform:translateY(-12px);
+
+    box-shadow:0 20px 40px rgba(0,0,0,.25);
+
+}
+
+.feature-card .display-3{
+
+    font-size:60px;
+
+    margin-bottom:15px;
+
+}
+
+.feature-card h4{
+
+    font-weight:bold;
+
+}
+
+.feature-card p{
+
+    color:#666;
+
+    min-height:70px;
+
+}
+
+</style>
+
+{% endblock %}

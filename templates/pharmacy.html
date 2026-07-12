@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block title %}Nearby Hospital{% endblock %}
+
+{% block content %}
+
+<div class="container">
+
+    <div class="main-card text-center">
+
+        <h1>🏥 Nearby Hospital Finder</h1>
+
+        <p>Click below to open nearby hospitals in Google Maps.</p>
+
+        <br>
+
+        <button class="btn btn-primary" onclick="findHospital()">
+            Find Nearby Hospital
+        </button>
+
+        <br><br>
+
+        <a href="/" class="btn btn-success">
+            Back Home
+        </a>
+
+    </div>
+
+</div>
+
+<script>
+function findHospital(){
+
+    if(navigator.geolocation){
+
+        navigator.geolocation.getCurrentPosition(function(position){
+
+            let lat=position.coords.latitude;
+            let lng=position.coords.longitude;
+
+            window.open(
+                "https://www.google.com/maps/search/hospital/@"+lat+","+lng+",15z",
+                "_blank"
+            );
+
+        });
+
+    }
+
+}
+</script>
+
+{% endblock %}

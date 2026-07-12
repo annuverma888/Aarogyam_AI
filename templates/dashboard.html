@@ -1,0 +1,185 @@
+{% extends "base.html" %}
+
+{% block title %}Health Dashboard{% endblock %}
+
+{% block content %}
+
+<div class="container py-5">
+
+    <div class="text-center mb-5">
+        <h1 class="fw-bold text-primary">📊 Health Dashboard</h1>
+        <p class="text-muted">Overview of your AI Disease Recommendation System</p>
+    </div>
+
+    <!-- Statistics Cards -->
+    <div class="row g-4">
+
+        <div class="col-lg-3 col-md-6">
+            <div class="card dashboard-card bg-primary text-white">
+                <div class="card-body text-center">
+                    <h1>🦠</h1>
+                    <h2>{{ diseases }}</h2>
+                    <p>Total Diseases</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+            <div class="card dashboard-card bg-success text-white">
+                <div class="card-body text-center">
+                    <h1>🤒</h1>
+                    <h2>{{ symptoms }}</h2>
+                    <p>Total Symptoms</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+            <div class="card dashboard-card bg-warning text-dark">
+                <div class="card-body text-center">
+                    <h1>💊</h1>
+                    <h2>{{ medicines }}</h2>
+                    <p>Medicines</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+            <div class="card dashboard-card bg-danger text-white">
+                <div class="card-body text-center">
+                    <h1>📄</h1>
+                    <h2>{{ reports }}</h2>
+                    <p>Generated Reports</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <br><br>
+
+    <!-- Feature Cards -->
+
+    <div class="row g-4">
+
+        <div class="col-md-4">
+
+            <div class="card shadow feature-box h-100">
+
+                <div class="card-body text-center">
+
+                    <h1>🩺</h1>
+
+                    <h4>Disease Prediction</h4>
+
+                    <p>Predict diseases using Machine Learning.</p>
+
+                    <a href="/disease" class="btn btn-primary">
+
+                        Open
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-4">
+
+            <div class="card shadow feature-box h-100">
+
+                <div class="card-body text-center">
+
+                    <h1>💊</h1>
+
+                    <h4>Medicine Search</h4>
+
+                    <p>Search medicines with dosage and side effects.</p>
+
+                    <a href="/medicine" class="btn btn-success">
+
+                        Open
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-4">
+
+            <div class="card shadow feature-box h-100">
+
+                <div class="card-body text-center">
+
+                    <h1>📄</h1>
+
+                    <h4>Reports</h4>
+
+                    <p>Download AI generated health reports.</p>
+
+                    <a href="/reports" class="btn btn-danger">
+
+                        Open
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<style>
+
+.dashboard-card{
+
+    border:none;
+
+    border-radius:20px;
+
+    transition:.4s;
+
+}
+
+.dashboard-card:hover{
+
+    transform:translateY(-8px);
+
+}
+
+.dashboard-card h2{
+
+    font-size:42px;
+
+    font-weight:bold;
+
+}
+
+.feature-box{
+
+    border-radius:20px;
+
+    transition:.4s;
+
+}
+
+.feature-box:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:0 15px 30px rgba(0,0,0,.2);
+
+}
+
+</style>
+
+{% endblock %}

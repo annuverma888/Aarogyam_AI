@@ -1,0 +1,887 @@
+/* ==========================================
+   Disease Recommendation System
+   Modern Medical Dashboard CSS
+========================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+:root{
+    --primary:#2563eb;
+    --secondary:#3b82f6;
+    --success:#10b981;
+    --danger:#ef4444;
+    --white:#ffffff;
+    --light:#f8fafc;
+    --dark:#0f172a;
+    --gray:#64748b;
+    --shadow:0 15px 35px rgba(0,0,0,.15);
+    --radius:18px;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    min-height:100vh;
+    background:linear-gradient(-45deg,#2563eb,#3b82f6,#0ea5e9,#06b6d4);
+    background-size:400% 400%;
+    animation:gradient 12s ease infinite;
+}
+
+@keyframes gradient{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+
+.container{
+    padding-top:40px;
+    padding-bottom:40px;
+}
+
+/* Navbar */
+
+.navbar{
+    background:rgba(255,255,255,.15)!important;
+    backdrop-filter:blur(20px);
+    box-shadow:var(--shadow);
+}
+
+.navbar-brand{
+    color:white!important;
+    font-size:28px;
+    font-weight:700;
+}
+
+/* Main Card */
+
+.main-card{
+    background:rgba(255,255,255,.18);
+    backdrop-filter:blur(20px);
+    border:1px solid rgba(255,255,255,.25);
+    border-radius:25px;
+    box-shadow:var(--shadow);
+    padding:40px;
+}
+
+/* Heading */
+
+.title{
+    color:white;
+    font-size:42px;
+    font-weight:700;
+    text-align:center;
+}
+
+.subtitle{
+    color:#e2e8f0;
+    text-align:center;
+    margin-bottom:30px;
+}
+
+/* Form */
+
+label{
+    color:white;
+    font-weight:600;
+    margin-bottom:10px;
+}
+
+.form-control,
+.form-select{
+    border-radius:12px;
+    border:none;
+    padding:12px;
+}
+
+select{
+    height:280px!important;
+}
+
+/* Predict Button */
+
+.btn-predict{
+    width:100%;
+    background:linear-gradient(90deg,#10b981,#14b8a6);
+    color:white;
+    border:none;
+    padding:16px;
+    font-size:20px;
+    font-weight:600;
+    border-radius:15px;
+    transition:.3s;
+}
+
+.btn-predict:hover{
+    transform:translateY(-4px);
+    box-shadow:0 10px 30px rgba(0,0,0,.2);
+}
+
+/* Result Cards */
+
+.result-card{
+    background:white;
+    border-radius:20px;
+    padding:25px;
+    margin-bottom:25px;
+    box-shadow:var(--shadow);
+    transition:.3s;
+}
+
+.result-card:hover{
+    transform:translateY(-8px);
+}
+
+.result-card h3{
+    color:var(--primary);
+    font-weight:600;
+    margin-bottom:15px;
+}
+
+/* Disease Badge */
+
+.disease-badge{
+    background:linear-gradient(90deg,#10b981,#22c55e);
+    color:white;
+    padding:12px 25px;
+    display:inline-block;
+    border-radius:50px;
+    font-size:24px;
+    font-weight:700;
+    margin-bottom:20px;
+}
+
+/* Lists */
+
+ul{
+    padding-left:20px;
+}
+
+li{
+    margin-bottom:10px;
+}
+
+/* Information Boxes */
+
+.info-box{
+    background:#f8fafc;
+    border-left:5px solid var(--primary);
+    padding:15px;
+    border-radius:10px;
+    margin-bottom:15px;
+}
+
+/* Diet Table */
+
+.table{
+    border-radius:15px;
+    overflow:hidden;
+}
+
+.table th{
+    background:#2563eb;
+    color:white;
+}
+
+.table td{
+    background:white;
+}
+
+/* Footer */
+
+footer{
+    margin-top:40px;
+    color:white;
+    text-align:center;
+    font-size:15px;
+}
+
+/* Scrollbar */
+
+::-webkit-scrollbar{
+    width:8px;
+}
+
+::-webkit-scrollbar-thumb{
+    background:#2563eb;
+    border-radius:10px;
+}
+
+/* Responsive */
+
+@media(max-width:992px){
+
+.main-card{
+    padding:25px;
+}
+
+.title{
+    font-size:34px;
+}
+
+}
+
+@media(max-width:768px){
+
+.title{
+    font-size:28px;
+}
+
+.subtitle{
+    font-size:15px;
+}
+
+select{
+    height:220px!important;
+}
+
+.btn-predict{
+    font-size:18px;
+}
+
+.result-card{
+    padding:18px;
+}
+
+.disease-badge{
+    font-size:20px;
+}
+
+}
+
+@media(max-width:576px){
+
+.container{
+    padding:15px;
+}
+
+.main-card{
+    padding:20px;
+}
+
+.title{
+    font-size:24px;
+}
+
+}
+/* Loading Spinner */
+
+#loading{
+
+display:none;
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+height:100%;
+
+background:rgba(255,255,255,.8);
+
+justify-content:center;
+
+align-items:center;
+
+z-index:9999;
+
+}
+
+/* Scroll Button */
+
+#scrollTop{
+
+position:fixed;
+
+bottom:30px;
+
+right:30px;
+
+width:50px;
+
+height:50px;
+
+border:none;
+
+border-radius:50%;
+
+background:#2563eb;
+
+color:white;
+
+font-size:22px;
+
+display:none;
+
+cursor:pointer;
+
+box-shadow:0 10px 25px rgba(0,0,0,.2);
+
+}
+
+/* Dark Mode */
+
+.dark-mode{
+
+background:#111827!important;
+
+color:white!important;
+
+}
+
+.dark-mode .result-card{
+
+background:#1f2937;
+
+color:white;
+
+}
+
+.dark-mode .card{
+
+background:#374151;
+
+color:white;
+
+}
+
+/* Toast */
+
+.custom-toast{
+
+position:fixed;
+
+top:20px;
+
+right:20px;
+
+background:#10b981;
+
+color:white;
+
+padding:15px 25px;
+
+border-radius:10px;
+
+opacity:0;
+
+transform:translateY(-20px);
+
+transition:.3s;
+
+z-index:9999;
+
+}
+
+.custom-toast.show{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+
+/* ================= BMI PAGE ================= */
+
+.bmi-card{
+    max-width:650px;
+    margin:40px auto;
+    background:#fff;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 8px 25px rgba(0,0,0,.15);
+}
+
+.bmi-title{
+    text-align:center;
+    font-size:38px;
+    font-weight:bold;
+    color:#0d6efd;
+    margin-bottom:25px;
+}
+
+.bmi-card .form-label{
+    font-weight:600;
+    margin-bottom:5px;
+    color:#333;
+}
+
+.bmi-card .form-control,
+.bmi-card .form-select{
+
+    height:48px;
+    border-radius:12px;
+    border:1px solid #ced4da;
+    font-size:16px;
+    margin-bottom:12px;
+
+}
+
+.bmi-card .form-control:focus,
+.bmi-card .form-select:focus{
+
+    border-color:#0d6efd;
+    box-shadow:0 0 8px rgba(13,110,253,.25);
+
+}
+
+.bmi-btn{
+
+    width:100%;
+    height:50px;
+    border:none;
+    border-radius:12px;
+    background:#0d6efd;
+    color:white;
+    font-size:18px;
+    font-weight:bold;
+    transition:.3s;
+
+}
+
+.bmi-btn:hover{
+
+    background:#0b5ed7;
+
+}
+
+.result-card{
+
+    margin-top:20px;
+    padding:20px;
+    border-radius:15px;
+    background:#e8f7ee;
+    border:2px solid #198754;
+    text-align:center;
+
+}
+
+.result-card h2{
+
+    color:#198754;
+    font-weight:bold;
+
+}
+
+.result-card p{
+
+    margin-bottom:0;
+}
+
+/* ================= Hospital ================= */
+
+.hospital-card{
+
+    max-width:700px;
+
+    margin:auto;
+
+    background:white;
+
+    padding:40px;
+
+    border-radius:20px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.15);
+
+}
+
+.hospital-card h2{
+
+    margin-bottom:20px;
+
+}
+
+.hospital-card p{
+
+    font-size:18px;
+
+    margin-bottom:25px;
+
+}
+
+.hospital-card .btn{
+
+    padding:12px 35px;
+
+    font-size:18px;
+
+    border-radius:10px;
+
+}
+
+.btn-danger{
+    background:#dc3545;
+    color:white;
+    border:none;
+}
+
+.btn-danger:hover{
+    background:#bb2d3b;
+}
+
+.btn-success{
+    background:#198754;
+    color:white;
+    border:none;
+}
+
+.btn-success:hover{
+    background:#157347;
+}
+
+.btn-warning{
+    background:#ffc107;
+    color:black;
+    border:none;
+}
+
+.btn-warning:hover{
+    background:#ffca2c;
+}
+
+.card-icon{
+
+    font-size:60px;
+
+    margin-bottom:15px;
+
+}
+
+.feature-card{
+
+    text-align:center;
+
+    transition:.3s;
+
+}
+
+.feature-card:hover{
+
+    transform:translateY(-8px);
+
+}
+
+.alert{
+
+    margin-top:20px;
+
+    font-size:18px;
+
+}
+
+.feature-card{
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(15px);
+    border-radius: 20px;
+    padding: 35px;
+    text-align: center;
+    color: white;
+    box-shadow: 0 10px 25px rgba(0,0,0,.2);
+    transition: .3s;
+}
+
+.feature-card:hover{
+    transform: translateY(-8px);
+}
+
+.card-icon{
+    font-size: 60px;
+    margin-bottom: 15px;
+}
+
+.feature-card h3{
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.feature-card p{
+    margin-bottom: 25px;
+}
+
+.feature-card .btn{
+    width: 100%;
+    border-radius: 12px;
+}
+
+
+/* Floating Button */
+
+#chatButton{
+
+position:fixed;
+
+right:25px;
+
+bottom:25px;
+
+width:70px;
+
+height:70px;
+
+border-radius:50%;
+
+background:#2563eb;
+
+color:white;
+
+font-size:34px;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+cursor:pointer;
+
+box-shadow:0 10px 30px rgba(0,0,0,.3);
+
+z-index:9999;
+
+transition:.3s;
+
+}
+
+#chatButton:hover{
+
+transform:scale(1.1);
+
+}
+
+/* Chat Window */
+
+#chatWindow{
+
+position:fixed;
+
+right:25px;
+
+bottom:110px;
+
+width:360px;
+
+height:520px;
+
+background:white;
+
+border-radius:20px;
+
+overflow:hidden;
+
+display:none;
+
+flex-direction:column;
+
+box-shadow:0 15px 40px rgba(0,0,0,.25);
+
+z-index:9999;
+
+}
+
+#chatHeader{
+
+background:#2563eb;
+
+color:white;
+
+padding:15px;
+
+font-size:20px;
+
+font-weight:600;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+}
+
+#closeChat{
+
+cursor:pointer;
+
+font-size:28px;
+
+}
+
+#chatBody{
+
+flex:1;
+
+padding:15px;
+
+overflow-y:auto;
+
+background:#f8fafc;
+
+}
+
+.bot-message{
+
+background:#e3f2fd;
+
+padding:12px;
+
+margin:10px 0;
+
+border-radius:15px;
+
+max-width:85%;
+
+}
+
+.user-message{
+
+background:#2563eb;
+
+color:white;
+
+padding:12px;
+
+margin:10px 0;
+
+border-radius:15px;
+
+margin-left:auto;
+
+text-align:right;
+
+max-width:85%;
+
+}
+
+#chatFooter{
+
+display:flex;
+
+padding:10px;
+
+border-top:1px solid #ddd;
+
+}
+
+#chatInput{
+
+flex:1;
+
+padding:12px;
+
+border:1px solid #ccc;
+
+border-radius:12px;
+
+outline:none;
+
+}
+
+#sendBtn{
+
+margin-left:8px;
+
+padding:0 18px;
+
+background:#2563eb;
+
+color:white;
+
+border:none;
+
+border-radius:12px;
+
+cursor:pointer;
+
+}
+
+/*================= Medicine Scanner =================*/
+
+.scanner-card{
+
+    max-width:750px;
+    margin:auto;
+    background:white;
+    padding:40px;
+    border-radius:20px;
+    box-shadow:0 15px 35px rgba(0,0,0,.15);
+
+}
+
+.scanner-title{
+
+    text-align:center;
+    color:#2563eb;
+    font-size:38px;
+    font-weight:700;
+
+}
+
+.scanner-subtitle{
+
+    text-align:center;
+    color:#666;
+    margin-bottom:30px;
+
+}
+
+.upload-area{
+
+    border:2px dashed #2563eb;
+    border-radius:20px;
+    padding:40px;
+    text-align:center;
+    background:#f8fbff;
+
+}
+
+.upload-area:hover{
+
+    background:#eef6ff;
+
+}
+
+.upload-icon{
+
+    font-size:70px;
+    margin-bottom:15px;
+
+}
+
+.upload-area input{
+
+    margin-top:20px;
+
+}
+
+.result-card{
+
+    background:#f5f9ff;
+    border-radius:15px;
+    padding:25px;
+    border-left:5px solid #2563eb;
+
+}
+
+.result-card h3{
+
+    color:#2563eb;
+
+}
+
+.result-card pre{
+
+    white-space:pre-wrap;
+    font-size:16px;
+    font-family:Poppins,sans-serif;
+    line-height:1.8;
+
+}
