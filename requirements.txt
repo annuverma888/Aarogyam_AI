@@ -19,5 +19,4 @@ pillow
 numpy
 pandas
 scikit-learn
-tensorflow==2.18.0
 easyocr
