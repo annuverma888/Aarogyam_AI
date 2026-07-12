@@ -8,7 +8,6 @@ pillow
 numpy
 pandas
 scikit-learn
-tensorflow
 gunicorn
 opencv-python-headless
 easyocr
