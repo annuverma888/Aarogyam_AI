@@ -9,4 +9,15 @@ numpy
 pandas
 scikit-learn
 tensorflow
+easyocrFlask
+gunicorn
+python-dotenv
+google-generativeai
+groq
+opencv-python-headless
+pillow
+numpy
+pandas
+scikit-learn
+tensorflow==2.18.0
 easyocr
