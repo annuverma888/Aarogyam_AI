@@ -1,15 +1,20 @@
 import pandas as pd
+import os
+
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+DATASET_DIR = os.path.join(BASE_DIR, "dataset")
 
 # ==========================
 # Load Datasets
 # ==========================
 
-description_df = pd.read_csv("dataset/disease_description.csv")
-precaution_df = pd.read_csv("dataset/symptom_precaution.csv")
-medicine_df = pd.read_csv("dataset/medicine_dataset.csv")      # Disease -> Medicines
-medicine_info_df = pd.read_csv("dataset/medicine_info.csv")    # Medicine Information
-diet_df = pd.read_csv("dataset/diet_dataset.csv")
-workout_df = pd.read_csv("dataset/workout_dataset.csv")
+description_df = pd.read_csv(os.path.join(DATASET_DIR, "disease_description.csv"))
+precaution_df = pd.read_csv(os.path.join(DATASET_DIR, "symptom_precaution.csv"))
+medicine_df = pd.read_csv(os.path.join(DATASET_DIR, "medicine_dataset.csv"))
+medicine_info_df = pd.read_csv(os.path.join(DATASET_DIR, "medicine_info.csv"))
+diet_df = pd.read_csv(os.path.join(DATASET_DIR, "diet_dataset.csv"))
+workout_df = pd.read_csv(os.path.join(DATASET_DIR, "workout_dataset.csv"))
 
 # Remove extra spaces from column names
 description_df.columns = description_df.columns.str.strip()

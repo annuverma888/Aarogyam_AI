@@ -8,11 +8,12 @@ from reportlab.lib.styles import getSampleStyleSheet
 from datetime import datetime
 import os
 from chatbot import get_bot_response
-from report_ocr import extract_text
+from report_ocr import extract_text as report_extract_text
+from ocr import extract_text as medicine_extract_text
 from report_ai import analyze_report
 from werkzeug.utils import secure_filename
 from flask import render_template, request
-from ocr import extract_text
+
 from medicine_ai import analyze_medicine
 
 
@@ -45,6 +46,8 @@ if "Unnamed: 133" in train.columns:
 
 symptoms = train.drop("prognosis", axis=1).columns.tolist()
 
+text = report_extract_text(filepath)
+ocr_text = medicine_extract_text(filepath)
 
 @app.route("/")
 def home():
@@ -326,4 +329,5 @@ def download():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port)
