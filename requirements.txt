@@ -8,7 +8,7 @@ pillow
 numpy
 pandas
 scikit-learn
-tensorflow
+
 easyocrFlask
 gunicorn
 python-dotenv
