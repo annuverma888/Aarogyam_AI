@@ -1,42 +1,47 @@
 import easyocr
-import fitz  # PyMuPDF
-from PIL import Image
+import fitz
+import os
 
-# Load OCR model only once
+reader = None
 
+def get_reader():
+    global reader
+    if reader is None:
+        reader = easyocr.Reader(['en'], gpu=False)
+    return reader
 
 
 def extract_text(file_path):
 
+    reader = get_reader()
+
     text = ""
-    reader = easyocr.Reader(['en'])
-    # ---------- PDF ----------
+
     if file_path.lower().endswith(".pdf"):
 
         pdf = fitz.open(file_path)
 
-        for page in pdf:
+        for i, page in enumerate(pdf):
 
-            # Extract normal text
             page_text = page.get_text()
 
             if page_text.strip():
                 text += page_text + "\n"
 
-            # If scanned PDF, perform OCR on image
-            pix = page.get_pixmap(dpi=300)
+            pix = page.get_pixmap(dpi=150)
 
-            image_path = "temp_page.png"
+            image_path = f"temp_{i}.png"
 
             pix.save(image_path)
 
             result = reader.readtext(image_path, detail=0)
 
-            text += " ".join(result)
+            text += " ".join(result) + "\n"
+
+            os.remove(image_path)
 
         pdf.close()
 
-    # ---------- Image ----------
     else:
 
         result = reader.readtext(file_path, detail=0)
