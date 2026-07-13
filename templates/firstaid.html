@@ -1,0 +1,269 @@
+{% extends "base.html" %}
+
+{% block title %}First Aid Guide{% endblock %}
+
+{% block content %}
+
+<div class="container py-5" style="margin-top:100px;">
+
+    <!-- Heading -->
+
+    <div class="text-center mb-5">
+
+        <h1 class="display-4 fw-bold text-primary color:#0B3D91;">
+            🩹 First Aid Guide
+        </h1>
+
+        <p class="lead text-muted">
+            Learn life-saving first aid procedures for common medical emergencies.
+        </p>
+
+    </div>
+
+    <!-- Cards -->
+
+    <div class="row g-4">
+
+        <!-- CPR -->
+
+        <div class="col-md-6">
+
+            <div class="card shadow-lg border-0 h-100 rounded-4">
+
+                <div class="card-body">
+
+                    <h3 class="fw-bold text-danger">
+                        ❤️ CPR
+                    </h3>
+
+                    <hr>
+
+                    <ul>
+                        <li>Call emergency services immediately.</li>
+                        <li>Place both hands in the center of the chest.</li>
+                        <li>Push hard and fast (100–120 compressions/min).</li>
+                        <li>Continue until medical help arrives.</li>
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Bleeding -->
+
+        <div class="col-md-6">
+
+            <div class="card shadow-lg border-0 h-100 rounded-4">
+
+                <div class="card-body">
+
+                    <h3 class="fw-bold text-danger">
+                        🩸 Bleeding
+                    </h3>
+
+                    <hr>
+
+                    <ul>
+                        <li>Apply firm pressure with a clean cloth.</li>
+                        <li>Raise the injured area if possible.</li>
+                        <li>Do not remove embedded objects.</li>
+                        <li>Visit the nearest hospital immediately.</li>
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Burns -->
+
+        <div class="col-md-6">
+
+            <div class="card shadow-lg border-0 h-100 rounded-4">
+
+                <div class="card-body">
+
+                    <h3 class="fw-bold text-warning">
+                        🔥 Burns
+                    </h3>
+
+                    <hr>
+
+                    <ul>
+                        <li>Cool the burn under running water.</li>
+                        <li>Do not apply toothpaste or ice.</li>
+                        <li>Cover with a clean dressing.</li>
+                        <li>Seek medical care if severe.</li>
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Fracture -->
+
+        <div class="col-md-6">
+
+            <div class="card shadow-lg border-0 h-100 rounded-4">
+
+                <div class="card-body">
+
+                    <h3 class="fw-bold text-primary">
+                        🦴 Fracture
+                    </h3>
+
+                    <hr>
+
+                    <ul>
+                        <li>Keep the injured limb still.</li>
+                        <li>Apply a splint if available.</li>
+                        <li>Use an ice pack to reduce swelling.</li>
+                        <li>Go to the nearest hospital.</li>
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Choking -->
+
+        <div class="col-md-6">
+
+            <div class="card shadow-lg border-0 h-100 rounded-4">
+
+                <div class="card-body">
+
+                    <h3 class="fw-bold text-success">
+                        😮 Choking
+                    </h3>
+
+                    <hr>
+
+                    <ul>
+                        <li>Encourage the person to cough.</li>
+                        <li>Give 5 back blows.</li>
+                        <li>Perform abdominal thrusts if needed.</li>
+                        <li>Call emergency services.</li>
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Snake Bite -->
+
+        <div class="col-md-6">
+
+            <div class="card shadow-lg border-0 h-100 rounded-4">
+
+                <div class="card-body">
+
+                    <h3 class="fw-bold text-success">
+                        🐍 Snake Bite
+                    </h3>
+
+                    <hr>
+
+                    <ul>
+                        <li>Keep the victim calm.</li>
+                        <li>Immobilize the affected limb.</li>
+                        <li>Do not cut or suck the wound.</li>
+                        <li>Reach the nearest hospital immediately.</li>
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Electric Shock -->
+
+        <div class="col-md-6">
+
+            <div class="card shadow-lg border-0 h-100 rounded-4">
+
+                <div class="card-body">
+
+                    <h3 class="fw-bold text-warning">
+                        ⚡ Electric Shock
+                    </h3>
+
+                    <hr>
+
+                    <ul>
+                        <li>Turn off the power source first.</li>
+                        <li>Do not touch the victim directly.</li>
+                        <li>Call emergency medical services.</li>
+                        <li>Start CPR if required.</li>
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Heart Attack -->
+
+        <div class="col-md-6">
+
+            <div class="card shadow-lg border-0 h-100 rounded-4">
+
+                <div class="card-body">
+
+                    <h3 class="fw-bold text-danger">
+                        💔 Heart Attack
+                    </h3>
+
+                    <hr>
+
+                    <ul>
+                        <li>Call an ambulance immediately.</li>
+                        <li>Keep the patient calm.</li>
+                        <li>Loosen tight clothing.</li>
+                        <li>Do not let the patient walk.</li>
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Disclaimer -->
+
+    <div class="alert alert-warning mt-5 text-center rounded-4">
+
+        <strong>⚠ Disclaimer:</strong>
+
+        This guide is for educational purposes only and does not replace professional medical advice.
+
+    </div>
+
+    <!-- Button -->
+
+    <div class="text-center mt-4 mb-5">
+
+        <a href="{{ url_for('home') }}" class="btn btn-primary btn-lg px-5">
+
+            🏠 Back to Home
+
+        </a>
+
+    </div>
+
+</div>
+
+{% endblock %}

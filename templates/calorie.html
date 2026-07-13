@@ -1,0 +1,201 @@
+{% extends "base.html" %}
+
+{% block title %}Calorie Calculator{% endblock %}
+
+{% block content %}
+
+<div class="container py-5" style="margin-top:100px;">
+
+    <div class="text-center mb-5">
+
+        <h1 class="display-4 fw-bold text-primary">
+            🍎 Calorie Calculator
+        </h1>
+
+        <p class="lead text-muted">
+            Calculate your daily calorie requirement based on your body details.
+        </p>
+
+    </div>
+
+    <div class="row justify-content-center">
+
+        <div class="col-lg-7">
+
+            <div class="card shadow-lg border-0 rounded-4">
+
+                <div class="card-body p-5">
+
+                    <div class="mb-3">
+                        <label class="form-label">Age</label>
+                        <input type="number" id="age" class="form-control" placeholder="Enter Age">
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Gender</label>
+                        <select id="gender" class="form-select">
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Height (cm)</label>
+                        <input type="number" id="height" class="form-control" placeholder="Enter Height">
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Weight (kg)</label>
+                        <input type="number" id="weight" class="form-control" placeholder="Enter Weight">
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="form-label">Activity Level</label>
+
+                        <select id="activity" class="form-select">
+
+                            <option value="1.2">Sedentary</option>
+                            <option value="1.375">Light Exercise</option>
+                            <option value="1.55">Moderate Exercise</option>
+                            <option value="1.725">Heavy Exercise</option>
+                            <option value="1.9">Athlete</option>
+
+                        </select>
+
+                    </div>
+
+                    <button class="btn btn-primary btn-lg w-100" onclick="calculateCalories()">
+
+                        🔥 Calculate Calories
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="row justify-content-center mt-5">
+
+        <div class="col-lg-7">
+
+            <div id="resultCard" class="card shadow border-0 rounded-4 d-none">
+
+                <div class="card-body text-center">
+
+                    <h2 class="text-success">
+                        Daily Calories
+                    </h2>
+
+                    <h1 id="calories" class="display-3 fw-bold text-primary"></h1>
+
+                    <p class="fs-5">
+                        kcal/day
+                    </p>
+
+                    <hr>
+
+                    <div class="row">
+
+                        <div class="col-md-4">
+
+                            <h5>Weight Loss</h5>
+
+                            <h4 id="loss" class="text-danger"></h4>
+
+                        </div>
+
+                        <div class="col-md-4">
+
+                            <h5>Maintain</h5>
+
+                            <h4 id="maintain" class="text-success"></h4>
+
+                        </div>
+
+                        <div class="col-md-4">
+
+                            <h5>Weight Gain</h5>
+
+                            <h4 id="gain" class="text-primary"></h4>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="text-center mt-4">
+
+        <a href="{{ url_for('home') }}" class="btn btn-outline-primary btn-lg">
+
+            🏠 Back to Home
+
+        </a>
+
+    </div>
+
+</div>
+
+<script>
+
+function calculateCalories(){
+
+    let age=document.getElementById("age").value;
+
+    let gender=document.getElementById("gender").value;
+
+    let height=document.getElementById("height").value;
+
+    let weight=document.getElementById("weight").value;
+
+    let activity=parseFloat(document.getElementById("activity").value);
+
+    if(age=="" || height=="" || weight==""){
+
+        alert("Please fill all fields");
+
+        return;
+
+    }
+
+    let bmr;
+
+    if(gender=="male"){
+
+        bmr=(10*weight)+(6.25*height)-(5*age)+5;
+
+    }
+
+    else{
+
+        bmr=(10*weight)+(6.25*height)-(5*age)-161;
+
+    }
+
+    let calories=Math.round(bmr*activity);
+
+    document.getElementById("calories").innerHTML=calories;
+
+    document.getElementById("loss").innerHTML=(calories-500)+" kcal";
+
+    document.getElementById("maintain").innerHTML=calories+" kcal";
+
+    document.getElementById("gain").innerHTML=(calories+500)+" kcal";
+
+    document.getElementById("resultCard").classList.remove("d-none");
+
+}
+
+</script>
+
+{% endblock %}

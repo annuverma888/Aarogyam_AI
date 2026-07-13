@@ -201,6 +201,9 @@ def predict():
 def hospital():
     return render_template("hospital.html")
 
+@app.route("/calorie")
+def calorie():
+    return render_template("calorie.html")
 
 @app.route("/chatbot")
 def chatbot():
@@ -214,7 +217,9 @@ def emergency():
 def pharmacy():
     return render_template("pharmacy.html")
 
-
+@app.route("/firstaid")
+def firstaid():
+    return render_template("firstaid.html")
 
 
 @app.route("/medicine_scanner", methods=["GET", "POST"])
@@ -330,3 +335,4 @@ def download():
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
     app.run(host="0.0.0.0", port=port)
+
