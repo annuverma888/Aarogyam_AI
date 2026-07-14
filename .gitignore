@@ -1,11 +1,9 @@
-# Python
+
+disease/
 __pycache__/
 *.pyc
-
-# Virtual Environment
-disease/
-venv/
-env/
+.ipynb_checkpoints/
+uploads/
 
 # Environment
 .env
