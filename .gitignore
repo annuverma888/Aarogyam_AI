@@ -10,9 +10,11 @@ uploads/
 
 # Notebook
 .ipynb_checkpoints/
+notebook/
 
 # VS Code
 .vscode/
+
 
 # Uploads
 uploads/
